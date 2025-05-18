@@ -1,0 +1,9 @@
+{
+  "label": "Deformable Mesh Component",
+  "description": "Learn how to use our Deformable Mesh Component",
+  "position": 6,
+  "link": {
+    "type": "doc",
+    "id": "guides/mesh-component/overview"
+  }
+}

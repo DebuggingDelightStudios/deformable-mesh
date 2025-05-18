@@ -1,0 +1,9 @@
+{
+  "label": "Deformation Data Tool",
+  "description": "Learn how to manage your Deformable Meshes",
+  "position": 5,
+  "link": {
+    "type": "doc",
+    "id": "guides/mesh-tool/overview"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "label": "Deformable Mesh (Asset)",
+  "description": "Learn what a Deformable Mesh is",
+  "position": 2,
+  "link": {
+    "type": "doc",
+    "id": "guides/mesh-asset/overview"
+  }
+}

@@ -26,6 +26,10 @@ There's also a *paid* version of this plugin available on the [marketplace](http
 
 ## Installation
 
+:::warning Unreal Engine 5.5
+At the moment there is *no* unreal engine 5.5 version of the Realtime Mesh (Core) component available in the marketplace, but you can use the [GitHub Version](https://github.com/TriAxis-Games/RealtimeMeshComponent) instead.
+:::
+
 1. Get the *free* "[Realtime Mesh - Core](https://fab.com/s/41804ec36805)" plugin from the FAB Marketplace.
 2. Download and install the plugin to your engine using the epic games launcher.
 3. (Optional) Move the downloaded plugin to your project's plugin folder.

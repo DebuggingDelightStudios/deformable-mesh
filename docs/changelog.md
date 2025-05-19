@@ -44,8 +44,10 @@ sidebar_position: 25
     - One mesh per data asset instead of potentially multiple meshes in one data table. See [*Upgrade-Guide*](./upgrading.md#version-1x-to-2x)
 - Support for external marketplace plugin "[**RealtimeMeshComponent**](./installation/realtimemesh.md)"
 - Support for **LODs** (_only in combination with RealtimeMeshComponent_)
+- Example C++ actor (``ExampleDeformableActor``)
 - Refactorings
     - Most of the important functions were moved to C++ for better **performance**
+    - All settings are now available in C++
     - Some deprecated functions were removed
     - We now make use of the **``OnRegister``** function instead of ``BeginPlay`` for earlier loading of the mesh
     - Several functions and properties were re-organized for better readability and usability

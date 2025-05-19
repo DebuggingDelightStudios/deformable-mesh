@@ -21,3 +21,4 @@ You can either migrate your existing *DeformationData-DataTables* using our *Scr
 - Function ``AddHitAtLocation``: Renamed and new parameters
 - Function ``ResetDeformation``: Renamed and replicated
 - Hazard lights material parameter: ``Hazzard`` => ``HazardStatus``
+- Properties for experimental functions _Hazard Lights_ and _Impact Sound_ were renamed

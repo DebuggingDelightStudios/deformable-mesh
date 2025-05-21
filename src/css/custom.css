@@ -28,3 +28,17 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+li img {
+  margin: 5px 5px 5px 0px; /* top right bottom left */
+}
+
+img {
+  -webkit-box-shadow: 0px 0px 10px 2px color-mix(in srgb, var(--ifm-table-border-color) 10%, transparent);
+  box-shadow: 0px 0px 10px 2px color-mix(in srgb, var(--ifm-table-border-color) 10%, transparent);
+}
+
+img.no-shadow {
+  -webkit-box-shadow: unset !important;
+  box-shadow: unset !important;
+}

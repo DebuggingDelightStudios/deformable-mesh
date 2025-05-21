@@ -7,7 +7,7 @@ import MyImage from '../static/img/dds_128.png';
 
 # Welcome
 
-<img src={MyImage} style={{float: "right", width: 96, maxWidth: "25%" }} />
+<img src={MyImage} style={{float: "right", width: 96, maxWidth: "25%" }} class="no-shadow" />
 
 Welcome to the documentation of the **Easy Static Mesh Deformation Component** - a powerful and flexible solution for deforming static meshes in Unreal Engine. This component was developed from the ground up to close a gap that no standard solution within Unreal Engine or common third-party tools reliably covers so far: the easy, dynamic, runtime-capable deformation of static meshes - regardless of their physics behavior.
 

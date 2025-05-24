@@ -5,7 +5,7 @@ sidebar_position: 15
 # Protection Box
 
 import Component from './img/protection-component.png';
-import ExamplePos from './img/protection-ex-pos.png';
+import ExamplePos from './img/protection-ex-pos.webp';
 import ExampleHierarchy from './img/protection-ex-hierarchy.png';
 import ExampleDeformed from './img/protection-ex-deformed.webp';
 

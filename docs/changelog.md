@@ -68,4 +68,8 @@ sidebar_position: 25
 :::info
 This version is not released yet.
 :::
-- Enhanced [Protection Boxes](./advanced-guides/protectionbox.md) (you can now have multiple protection boxes and group them)
+- Enhanced [Protection Boxes](./advanced-guides/protectionbox.md)
+    - You can have multiple Protection Boxes instead of only one
+    - The Protection Boxes can be grouped and don't have to be a children of the *Deformable Mesh Component* anymore.
+- Enhanced [Deformation Materials](./advanced-guides/deformation-material.md)
+    - Refactored the template material and extended the existing documentation

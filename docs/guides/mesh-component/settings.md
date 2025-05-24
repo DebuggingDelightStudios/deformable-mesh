@@ -31,7 +31,7 @@ Acceleration ($m/s²$) required to achieve "*Max Hit Deform Percentage*". Can be
 Delay (*in seconds*) between the next hit that can processed. With this setting, hits that follow each other too quickly are ignored (*for performance reasons*).
 
 ### Min Relevant Impact Strength
-Minimum Impact Strength (in percentage) required to trigger a deformation.
+Minimum Impact Strength (in percentage) required to trigger a deformation. You can create very slight visible deformation when using a very low value (or even 0) in combination with a [scratch mask](../../advanced-guides/deformation-material.md).
 
 ### Deformation Falloff Curve
 Defines how damage (*per vertex*) is distributed based on distance to the center (*hit location*). Adjust this curve to control how the deformation effect decreases over distance. For example, a higher Y-value at the start results in more severe damage close to the impact point. 

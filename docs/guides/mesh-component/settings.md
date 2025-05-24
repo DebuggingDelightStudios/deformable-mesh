@@ -41,6 +41,9 @@ Defines how damage (*per vertex*) is distributed based on distance to the center
 ### Radius
 Minimum / Maximum Impact Radius (in cm). It affects how many vertices can move (deform) in a single impact. The minimum size corresponds to a very low force impact and the maximum size corresponds to a very high force impact. You can visualize this using the "[*Debug Impact*](#debug)" setting.
 
+### Protection - Groups (V 2.1) {#protection-groups}
+This is an optional setting. You can protect a predefined zone (box) from deformation with protection boxes. By default only *ProtectionBoxComponents* that are **direct** children of this component are taken into account. With this setting you can additionally take *ProtectionBoxComponents* into account, that are somewhere else in the component hierarchy. The groups are also defined inside the *ProtectionBoxComponents*. For more information see [Protection Box](../../advanced-guides/protectionbox.md)
+
 ### None Physics - Mass Override
 This value (in kg) overrides the *mass* of the parent component (*skeletal or static mesh*) that is used to calculate the deformation. This setting is **mandatory** if the parent component *does not* simulate physics.
 

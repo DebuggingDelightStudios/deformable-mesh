@@ -28,6 +28,10 @@ Before creating a new Deformable Mesh you should make sure that you have a [suit
 <img src={CreatedAsset} />
 Now you'll have a new Deformable Mesh, congratulation!
 
+:::info Reminder
+After making changes to the static mesh itself later on, you **have to** open and re-save (or [refresh](./asset-management.md#refreshing-an-existing-deformable-mesh)) the Deformable Mesh *when you [prepare the mesh data or the groups](./asset-options.md#prepare-mesh-data)*! Otherwise your changes made to the static mesh will NOT be adopted to the Deformable Mesh.
+:::
+
 ## Edit an existing Deformable Mesh
 
 Editing an existing Deformable Mesh is also very easy. You simply have to select the desired Deformable Mesh asset.

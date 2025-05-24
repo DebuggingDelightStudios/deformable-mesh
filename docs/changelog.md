@@ -4,22 +4,22 @@ sidebar_position: 25
 
 # Changelog
 
-## Version 1.0 (07/2024)
+## Version 1.0 (07/2024) {#version-10}
 - Initial Release, basic functionalities
 
-### Version 1.1 (08/2024)
+### Version 1.1 (08/2024) {#version-11}
 - Network Replication
 - Support for non-physics-simulating Actors and Non-Vehicle Actors
 - Support for impulses through new **AddHitToLocation** function
 - Various refactorings of the component
 - Removed: "Vehicle Material" setting
 
-### Version 1.2 (09/2024)
+### Version 1.2 (09/2024) {#version-12}
 - 12 new functions have been added to influence the _materials_ from the Procedural Mesh, for example to control the vehicle lighting.
 - New getter function has been added to expose the Procedural Mesh. 
 - A bug that only one material slot is taken into account (the last index) is also   fixed.
 
-### Version 1.3 (10/2024)
+### Version 1.3 (10/2024) {#version-13}
 - Demo map:
     - A bug has been fixed in the demo map where the tires constantly slipped into the ground
     - Collisions in the demonstration vehicle have been reworked
@@ -30,13 +30,13 @@ sidebar_position: 25
 - Collision damping has been improved and now functions more effectively.
 - And much more. 
 
-### Version 1.3.2 (01/2025)
+### Version 1.3.2 (01/2025) {#version-132}
 - Fixed an error in the tool that caused the tool to lag when selecting assets.
 - C++ accessibility of all important functions, events and variables.
 - A new experimental feature: [**ProtectionBox**](./advanced-guides/protectionbox.md) Component, which can protect areas from deformation (for example driver's seat with driver).
 - Minor bugfixes.
 
-## Version 2.0 (05/2025)
+## Version 2.0 (05/2025) {#version-20}
 - [*Upgrade-Guide*](./upgrading.md#version-1x-to-2x)
 - New documentation ([old documentation](https://docs.google.com/document/d/15rQ43N4Q9SQlBJg12ZPjgmUrXZX8UX5u07IsrkZnFo8/edit?usp=sharing))
 - Complete overhaul of the [Deformable Mesh Tool](./guides/mesh-tool/overview.md)
@@ -63,3 +63,9 @@ sidebar_position: 25
     - ``ResetDeformation`` is now replicated by default
     - ``RandomCarColor`` is also replicated by default
 - ... many small things - too many to list them here :)
+
+### Version 2.1 (UPCOMING) {#version-21}
+:::info
+This version is not released yet.
+:::
+- Enhanced [Protection Boxes](./advanced-guides/protectionbox.md) (you can now have multiple protection boxes and group them)

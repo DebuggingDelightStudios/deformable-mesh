@@ -182,6 +182,7 @@ const config: Config = {
   } satisfies Preset.ThemeConfig,
   plugins: [ 
     [require.resolve('docusaurus-plugin-image-zoom'), { id: 'docusaurus-plugin-image-zoom' }],
+    [require.resolve('docusaurus-lunr-search'), { languages: ["en"], highlightResult: true }]
   ],
   scripts: [
     {

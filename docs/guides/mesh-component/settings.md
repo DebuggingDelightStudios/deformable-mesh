@@ -4,17 +4,23 @@ sidebar_position: 5
 
 # Settings
 
+import CompDetails from './img/comp-details.png';
+
 ## General
 
 ### Deformable Mesh
 
 This is the [Deformable Mesh (Asset)](../mesh-asset/overview.md) that you created using the [Deformation Data Tool](../mesh-tool/asset-management.md#create-a-new-deformable-mesh).
+<img src={CompDetails}/>
 
-## Collision
+## Hit Settings
 
 - **Collision Type Restriction** (optional): Only deform when hitting components that have this collision type. By default there is no restriction.
 - **Actor Type Restriction** (optional): Only deform when hitting an actor of this type. By default there is no restriction.
 - **Disable Hit**: Disable new hits completely. (temporary?)
+- **Ignore Self Hits** (*V 2.1*): Do not trigger a deformation when we are hit by ourselves. If activated the hit will be ignored as soon as possible. Useful when working with physics objects that are constraint to the actor. For example a physics door that may hit the vehicle. See: [Attachments](../../advanced-guides/vehicles/attachments.md)
+- **Receive Forwarded Hits** (*V 2.1*): Can we receive forwarded hits from other deformable mesh components? See: [Attachments](../../advanced-guides/vehicles/attachments.md)
+- **Generate Forwarded Hits** (*V 2.1*): Forward hits to other deformable mesh components when appropriate? See: [Attachments](../../advanced-guides/vehicles/attachments.md)
 
 ## Deformation
 
@@ -54,6 +60,10 @@ This setting ONLY affects the deformation calculation! The actual mass is NOT ch
 ### NoiseEffects
 - **NoiseFactor**: This controls the frequency scaling of the noise layers. It determines how "*dense*" or "*spread out*" the noise effect is on the deformation. Higher values result in more rapid fluctuations in the noise (creating a finer noise pattern), while lower values create smoother, less detailed noise effects. Recommended value range: $[0.0, 1.0]$
 - **TotalAmplitude**: This controls the intensity of the *noise effect* on the deformation. It acts as a global multiplier that affects how strongly each noise layer (Noise1, Noise2, Noise3) contributes to the overall deformation. Higher values increase the deformation effect caused by noise, while lower values reduce it, giving you control over the strength of the noise-based deformation.
+
+### Advanced / Miscellaneous {#deformation-advanced}
+#### Ignore Actor Component Origins (V 2.1) {#ignore-actor-component-origins}
+Ignore any [Deformation Origin Component](../../advanced-guides/deformation-origin.md) of type ``Actor``. Make sure to use ``FindOriginComponent`` and to set the ``OriginComponent`` property manually when changing this at *runtime*!
 
 ## Sound
 
@@ -115,7 +125,7 @@ All "... *LOD* ..." settings only affect the [Realtime Mesh Component](../../ins
 - **Profile Hit Process**: Profile the hit processing (*LogCategory: LogStats*)
 - Also see: [Performance-Profiling](../../advanced-guides/performance-profiling.md)
 
-### Advanced
+### Advanced {#hit-advanced}
 
 **Mesh draw type (RMC)**: (ONLY RMC) The rendering path to use. **Static** has lower overhead but requires a proxy recreation on change for all components. **Dynamic** has slightly higher overhead but allows for more efficient updates. See [official documentation](https://rmc.triaxis.games/component-core/structure/#frealtimemeshsection).
 

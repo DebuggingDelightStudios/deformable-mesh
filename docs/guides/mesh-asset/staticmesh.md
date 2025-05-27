@@ -36,7 +36,7 @@ When it comes to the static mesh that's used for the Deformable Mesh, the follow
     <img src={NoDeformationWireframe} class="no-shadow" />
 </details>
 
-- When using [**attachments**](../../advanced-guides/attachments.md) make sure your static meshes are **NOT ONE SIDED** (*= only visible from one side and invisible / transparent from the other side*), in the event that the static mesh falls off you can see both sides.
+- When using [**attachments**](../../advanced-guides/vehicles/attachments.md) make sure your static meshes are **NOT ONE SIDED** (*= only visible from one side and invisible / transparent from the other side*), in the event that the static mesh falls off you can see both sides.
 <details>
     <summary>Example: One sided mesh</summary>
     <img src={OneSidedMesh} class="no-shadow" />

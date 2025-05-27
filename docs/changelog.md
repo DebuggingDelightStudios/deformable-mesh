@@ -69,7 +69,14 @@ sidebar_position: 25
 This version is not released yet.
 :::
 - Enhanced [Protection Boxes](./advanced-guides/protectionbox.md)
-    - You can have multiple Protection Boxes instead of only one
+    - You can have multiple Protection Boxes instead of only one.
     - The Protection Boxes can be grouped and don't have to be a children of the *Deformable Mesh Component* anymore.
 - Enhanced [Deformation Materials](./advanced-guides/deformation-material.md)
-    - Refactored the template material and extended the existing documentation
+    - Refactored the template material and extended the existing documentation.
+- New [Deformation Origin Component](./advanced-guides/deformation-origin.md)
+    - Choose where the origin of the deformation should be, per component and/or for the entire actor.
+- New Component Setting(s)
+    - [Hit - Ignore Self Hits](guides/mesh-component/settings.md#hit-settings): *Do not trigger a deformation when we are hit by ourselves.*
+    - [Hit - Receive Forwarded Hits](guides/mesh-component/settings.md#hit-settings)
+    - [Hit - Generate Forwarded Hits](guides/mesh-component/settings.md#hit-settings)
+    - [Deformation - Ignore Actor Component Origins](guides/mesh-component/settings.md#ignore-actor-component-origins): *Ignore any Deformation Origin Component of type ``Actor``.*

@@ -1,5 +1,6 @@
 ---
-sidebar_position: 10
+sidebar_position: 2
+description: Learn how to enhance your visual deformation using materials
 ---
 
 # Deformation Material

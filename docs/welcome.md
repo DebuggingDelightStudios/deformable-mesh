@@ -24,7 +24,7 @@ In this documentation you will learn how to integrate, customize and efficiently
 - One [drivable car](./installation/example.md) included.
 - Highly performant at runtime.
 - Ultra Fast [Setup](./guides/mesh-component/setup.md).
-- **Our Component** supports [skeletal](./advanced-guides/chaos-vehicle.md) and [static mesh](./advanced-guides/advanced-vehicle-system.md) based vehicle systems.
+- **Our Component** supports [skeletal](./advanced-guides/vehicles/chaos-vehicle.md) and [static mesh](./advanced-guides/vehicles/advanced-vehicle-system.md) based vehicle systems.
 - Supports high and low poly meshes.
 - The meshes can have any shape. (*see [best practices](./guides/mesh-asset/staticmesh.md)*)
 

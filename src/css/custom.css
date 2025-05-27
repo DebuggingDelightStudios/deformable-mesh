@@ -42,3 +42,11 @@ img.no-shadow {
   -webkit-box-shadow: unset !important;
   box-shadow: unset !important;
 }
+
+span.theme-last-updated {
+  opacity: 0.5;
+}
+
+footer.theme-doc-footer, nav.pagination-nav {
+  margin-top: 1.5rem;
+}

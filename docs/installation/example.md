@@ -31,7 +31,7 @@ We include one drivable car and an example map on which the deformation can be t
     </div>
     **Location**: /Plugins/DeformableStaticMesh/Content/Example/ChaosVehicleExample/
 
-    The example car is a ChaosVehicle (``AWheeledVehiclePawn``) that uses a _placeholder skeletal mesh_. This is NOT necessary, but because the skeletal mesh is only used for collision it (*most of the time*) does not matter how it looks. For more information see: [**Chaos Vehicle**](../advanced-guides/chaos-vehicle.md)
+    The example car is a ChaosVehicle (``AWheeledVehiclePawn``) that uses a _placeholder skeletal mesh_. This is NOT necessary, but because the skeletal mesh is only used for collision it (*most of the time*) does not matter how it looks. For more information see: [**Chaos Vehicle**](../advanced-guides/vehicles/chaos-vehicle.md)
 
     There is a special material override that overrides the default material of the mesh with a [_deformable_ material](../advanced-guides/deformation-material.md) (`/DeformableStaticMesh/Content/Materials/Example/M_Deformable_TestVehicle`). This makes dents even more visible and enables hazard lights. In addition to that there's also a [protection box](../advanced-guides/protectionbox.md) that prevents the driver side (left) from deforming too much.
 

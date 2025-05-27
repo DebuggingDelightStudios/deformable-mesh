@@ -1,5 +1,6 @@
 ---
-sidebar_position: 7
+sidebar_position: 20
+description: Learn how to find performance bottlenecks
 ---
 
 # Performance Profiling

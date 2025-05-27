@@ -1,8 +1,9 @@
 ---
-sidebar_position: 15
+sidebar_position: 6
+description: Protect parts of your mesh completely from deformation
 ---
 
-# Protection Box
+# Protection Box Component
 
 import Component from './img/protection-component.png';
 import ExamplePos from './img/protection-ex-pos.webp';
@@ -25,7 +26,7 @@ You can only have **one** protection box and **only as a children** as of versio
     <summary>Example usage</summary>
     <img src={ExamplePos} />
     <img src={ExampleDeformed} />
-    Note: Deformation only occurred from the top and not from the side! That's why the lower (yellow) part of the door has no deformation at all.
+    Note: Deformation in the above image only occurred from the top and not from the side! That's why the lower (yellow) part of the door has no deformation at all.
 </details>
 
 ## Setup 1: Direct Children
@@ -38,7 +39,7 @@ After changing your protection boxes at runtime, e.g. removing / adding / moving
 
 ## Setup 2: Groups (V 2.1)
 
-If you want to use **one** Protection Box for **multiple** *Deformable Mesh Components* then you can use the [**Protection Box Groups**](../guides/mesh-component/settings.md#protection-groups) setting. When using groups, the Protection Box Components can be located *anywhere* in your component hierarchy, see this image for example:<br/><img src={ExampleGroupsHierarchy} style={{maxWidth: "50%"}} />
+If you want to use **one** Protection Box for **multiple** *Deformable Mesh Components* (*or vice versa*) then you can use the [**Protection Box Groups**](../guides/mesh-component/settings.md#protection-groups) setting. When using groups, the Protection Box Components can be located *anywhere* in your component hierarchy, see this image for example:<br/><img src={ExampleGroupsHierarchy} style={{maxWidth: "50%"}} />
 
 1. Go to the *Protection Box Component(s)* and assign one or more **Groups**:<br/><img src={ExampleGroupsBoxSett} />
 2. These groups then can be configured per *Deformable Mesh Component* as seen here:<br/><img src={ExampleGroupsCompSett} />

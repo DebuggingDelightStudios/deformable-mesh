@@ -80,3 +80,7 @@ This version is not released yet.
     - [Hit - Receive Forwarded Hits](guides/mesh-component/settings.md#hit-settings)
     - [Hit - Generate Forwarded Hits](guides/mesh-component/settings.md#hit-settings)
     - [Deformation - Ignore Actor Component Origins](guides/mesh-component/settings.md#ignore-actor-component-origins): *Ignore any Deformation Origin Component of type ``Actor``.*
+    - [Experimental - Impact Effects](guides/mesh-component/settings.md#impact-effects): *Define SFX / VFX for specific Physical Materials*
+- Deprecated Component Setting(s):
+    - [Sound - Impact Sound](guides/mesh-component/settings.md#impact-sound): *See [Impact Effects](guides/mesh-component/settings.md#impact-effects)*
+    - [Experimental - Impact Particles](guides/mesh-component/settings.md#impact-particles): *See [Impact Effects](guides/mesh-component/settings.md#impact-effects)*

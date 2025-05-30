@@ -67,7 +67,8 @@ Ignore any [Deformation Origin Component](../../advanced-guides/deformation-orig
 
 ## Sound
 
-### Impact Sound
+### Impact Sound (DEPRECATED V 2.1) {#impact-sound}
+**Deprecated, see [Impact Effects](#impact-effects) instead.**
 - **Play Sound on Impact**: Should the *Impact Sound* play on impact?
 - **Impact Sound**: Here you can insert a sound file that will be played on impact (when enabled)
 - **Impact Sound Attenuation**: Insert a [sound attenuation config file](https://dev.epicgames.com/documentation/en-us/unreal-engine/sound-attenuation-in-unreal-engine) here that matches your impact sound.
@@ -140,10 +141,23 @@ Bounds are NOT collision!
 ### Collision Damping
 Dampens the force that throws the vehicle back like a rubber ball after an impact. Alternatively you can also use "*Physical Material Restitution*" of your [Physical Materials](https://dev.epicgames.com/documentation/en-us/unreal-engine/physical-materials-reference-for-unreal-engine). Our implementation can be customized using the *Restitution Coefficient*.
 
-### Impact Particles
-When "*Impact Particle On Impact*" is activated the specified "*Impact Niagara Particle*" system is spawned on every impact (hit) at the hit location. See our example niagara particle system for reference.
+### Impact Particles (DEPRECATED V 2.1) {#impact-particles}
+**Deprecated, see [Impact Effects](#impact-effects) instead.** When "*Impact Particle On Impact*" is activated the specified "*Impact Niagara Particle*" system is spawned on every impact (hit) at the hit location. See our example niagara particle system for reference.
 
 ### Hazard Lights
 When "*Hazard Lights On Impact*" is activated, the hazard lights are activated for the deformable mesh on impact. This requires a *compatible material*, that make use of the ``IndicatorStatus`` and ``HazardStatus`` material parameters to display the status. Take our [example deformation material](../../installation/example.md) `M_Deformable_TestVehicle` for reference. You can read more about materials [here](../../advanced-guides/deformation-material.md).
 - ``IndicatorStatus``: 1 = Hazard (*0 and 2 could be left/right indicators, but they are not relevant for this use case*)
 - ``HazardStatus``: 0 = Hazard lights OFF, 1 = Hazard lights ON
+
+import ImpactEffect from './img/settings-impact-effect.png';
+
+### Impact Effects (V 2.1) {#impact-effects}
+This setting can be used to play a **sound** (SFX) and/or to spawn a *niagara* **particle system** (VFX) on impact. You don't *have to* select a sound and a particle system - if you don't want to play a sound or spawn a particle system then just leave the properties empty or remove the whole impact effect. 
+
+:::info
+An *impact effect* with ``CheckPhysicalMaterial = False`` and ``CheckPhysicalSurfaceType = False`` (*see image below*) is used as the **default** impact effect, whenever no other impact effect was found for a physical material.
+:::
+
+You can define multiple *impact effects*. They are evaluated on impact, we select a impact effect by comparing the physical material of the component that we hit and the specified *physical material* or *physical surface type* of the impact effect.
+
+<img src={ImpactEffect} style={{maxWidth: "50%"}} />

@@ -51,12 +51,12 @@ sidebar_position: 25
     - Some deprecated functions were removed
     - We now make use of the **``OnRegister``** function instead of ``BeginPlay`` for earlier loading of the mesh
     - Several functions and properties were re-organized for better readability and usability
-- New Events
+- New [Events](guides/mesh-component/events.md)
     - ``DeformableMeshLoaded``
     - ``DeformableMeshInitialized``
     - ``DeformableMeshUpdated``
     - ``AfterImpact`` _(this one was broken in previous version)_
-- New Settings
+- New [Settings](guides/mesh-component/settings.md)
     - Performance-Settings
     - Profiling-Settings
 - Networking
@@ -68,6 +68,7 @@ sidebar_position: 25
 :::info
 This version is not released yet.
 :::
+- **Support for Unreal Engine 5.6**
 - Enhanced [Protection Boxes](./advanced-guides/protectionbox.md)
     - You can have multiple Protection Boxes instead of only one.
     - The Protection Boxes can be grouped and don't have to be a children of the *Deformable Mesh Component* anymore.
@@ -84,3 +85,6 @@ This version is not released yet.
 - Deprecated Component Setting(s):
     - [Sound - Impact Sound](guides/mesh-component/settings.md#impact-sound): *See [Impact Effects](guides/mesh-component/settings.md#impact-effects)*
     - [Experimental - Impact Particles](guides/mesh-component/settings.md#impact-particles): *See [Impact Effects](guides/mesh-component/settings.md#impact-effects)*
+- Optimized the [AfterImpact](guides/mesh-component/events.md)-Event for better attachment support.
+- Refactored the included ExampleCar-Blueprint (*renamed some components*)
+- Extended the documentation for advanced topics, e.g. [Chaos Vehicle](advanced-guides/vehicles/chaos-vehicle.md) and [Attachments](advanced-guides/vehicles/attachments.md). *We are still working on these topics.*

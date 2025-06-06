@@ -1,12 +1,82 @@
 ---
-sidebar_position: 10
+sidebar_position: 3
 description: Learn how to make attached things deformable (e.g. bumpers)
 ---
 
+import NoWheels from './img/no-wheels.webp';
+import PoliceCarMeshes from './img/policeCar-meshes.webp';
+import PoliceCarSkeletal from './img/policeCar-skeletal.webp';
+import PoliceCarHierarchyVanilla from './img/policeCar-hierarchy-vanilla.png';
+import PoliceCarHierarchyNoConstr from './img/policeCar-hierarchy-noConstraints.png';
+
+import CompDetails from '../../guides/mesh-component/img/comp-details.png';
+
+import Youtube from '../../../static/img/youtube.png';
+
 # Attachments
 
-## Work In Progress
+This guide will teach you how to make deformable attachments like bumpers. For a simple guide see [Chaos Vehicle](./chaos-vehicle.md).
+
+:::info What is an *Attachment*?
+An attachment is a **separate** part of the vehicle that is **not** part of the vehicle skeletal mesh itself. Good examples for attachments are front/rear bumpers or doors. Doors are often not part of the vehicle skeletal mesh itself, because they need to move (open/close) in some cases. An attachment can be welded to the vehicle (default) or attached to the vehicle using a physics constraint. We only cover welded attachments in this guide.
+:::
+
+## Requirements for Attachments {#requirements}
+
+- You need a **working** chaos vehicle (*we're not teaching you this*).
+- Every attachment must be available as a static mesh (*to create a deformable mesh*).
+    - [Learn what's important for your static mesh](../../guides/mesh-asset/staticmesh.md).
+- Make sure you read the [Setup for Chaos Vehicles](./chaos-vehicle.md#setup).
+
+:::warning Skeletal Bones for Doors, Trunk, ...
+You **can** still use separate skeletal bones in combination with animation blueprints e.g. for opening/closing vehicle doors (*this can be done with chaos vehicles by default, see [here](https://youtu.be/-V1WoTHvSyk?si=YJJ9uVhlb2KfpuYu&t=255)*), **but** the affected vehicle parts have to be **separate** (*deformable/static*) meshes! They can **NOT** be part of the vehicle skeletal mesh itself, because the vehicle skeletal mesh is only used for collision. The *deformable* car that you see in game is our Deformable Mesh Component and that component is not affected by moving skeletal bones. You'd have to create a separate static or deformable mesh component and attach that component to a skeletal bone (attachment method 2 in Setup).
+:::
+
+<!-- :::danger
+TODO: Wenn auto welded -> Wie siehts mit Kollision aus? Muss das dann auch aus dem PhysicalAsset raus? => Ja, sonst kriegt das Attachment den Hit nicht. PhysicalAsset soll nur der "Body" sein (ohne Attachments => Beispiel zeigen)
+ Braucht das attachment überhaupt collision?...
+::: -->
+
+## Setup
+
+1. Make sure you have prepared all attachments that you want to make deformable. They'd be available as a static mesh (see [Requirements](#requirements)). Here's an example for a police car from our [<img src={Youtube} class="no-shadow" style={{width:"28px", verticalAlign: "top"}} /> demonstration video](https://youtu.be/3C0cIqPouwc?si=kFMq5lHPhfcE5fRW&t=30):
+<details>
+    <summary>Example: Police Car Static Meshes</summary>
+    <p>
+    The Police Car from our video has some attachments. Both front and rear bumpers, the hood/trunk and the sirens are [attachments](attachments.md) that are connected to the car using physics constraints. **The wheels are listed here, because they're static meshes. They do not deform.**
+    <img src={PoliceCarMeshes} class="no-shadow" />
+    </p>
+</details>
+2. [Create a Deformable Mesh](../../guides/mesh-tool/asset-management.md#create-a-new-deformable-mesh) for each attachment static mesh that should be deformable.
+3. Create a separate (*static*) mesh component for every attachment in your actor. Each mesh components must have **collision enabled** and ``Simulation Generates Hit Events`` enabled (**IMPORTANT**).
+<details>
+    <summary>Example: Police Car Static Mesh Components</summary>
+    <img src={PoliceCarHierarchyVanilla} class="no-shadow" />
+</details>
+4. Choose one of the following attachment methods for the previously created attachment mesh components:
+    1. **Attach by welding** (*default*): This is the simples method of attaching a mesh component to your vehicle. You don't have to change anything after placing the mesh component somewhere below your vehicle skeletal mesh in the component hierarchy. Just make sure the property **Auto Weld** (*Physics* -> *Advanced*) is enabled (which it is by default), that's it. Physics simulation should be disabled when using this method (or method 2).
+    2. **Attach by welding to a skeletal bone / socket**: This is like method 1, but instead of placing the mesh component "somewhere" below your vehicle skeletal mesh, you want to place it directly below the vehicle mesh and select the **Parent Socket** (*these are the skeletal bones of the vehicle*, see [here](https://dev.epicgames.com/documentation/en-us/unreal-engine/skeletal-mesh-sockets-in-unreal-engine#basicblueprintattachment)) that you want to attach the attachment to. With this method the attachment will move / rotate when the socket / skeletal bone moves / rotates.
+    3. **Attach with physics constraints**: You can of course also use physics constraints to attach an attachment to your vehicle. Since they're not known to be very stable in most unreal engine versions, we will skip this topic for now. If you want to go this road, make sure to take a look at the following settings of the Deformable Mesh Component: [Ignore Self Hits](../../guides/mesh-component/settings.md#hit-settings), [Receive / Generate Forwarded Hits](../../guides/mesh-component/settings.md#hit-settings).
+
+4. Create a [Deformable Mesh Component](../../guides/mesh-component/overview.md) for each attachment mesh component that you want to deform and place the Deformable Mesh Component directly below the corresponding attachment mesh component in the component hierarchy.
+<details>
+    <summary>Example: Police Car Deformable Mesh Components</summary>
+    <p>
+    In this example we want to deform the bumpers (`DMC_BumperF`, `DMC_BumperB`), trunk (`DMC_Trunk`), hood (`DMC_Hook`) and the vehicle itself (`DMC_Vehicle`). **The siren is not deformable, that's why there is no DMC_Siren**.
+    <img src={PoliceCarHierarchyNoConstr} class="no-shadow" />
+    </p>
+</details>
+5. Configure each Deformable Mesh Component. At least assign the respective Deformable Mesh:<br/><img src={CompDetails} />
+6. Et voila, you're done!
+
+<!-- ## Work In Progress
 
 Ignore Self Hits
 Receive Forwarded Hits
 Generate Forwarded Hits
+
+-->
+
+:::info
+We're still working on this guide :)
+:::

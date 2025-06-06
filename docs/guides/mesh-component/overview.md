@@ -9,7 +9,7 @@ sidebar_position: 0
 The Deformable Mesh Comp is the counterpart to the [Deformation Data Tool](../mesh-tool/overview.md). This is where the magic happens. Here the collected data from the [Deformable Mesh (Asset)](../mesh-asset/overview.md) that we previously created is processed. The component simply works according to the **plug & play** system: You simply place it below the *vehicle mesh / mesh to deform*, give the component some information and the component regulates the rest independently.
 
 :::info
-The *Deformable Mesh Component* itself has **NO COLLISION**! It uses the collision of the parent component (the static mesh or skeletal mesh).
+The *Deformable Mesh Component* itself has **NO COLLISION**! It uses the collision of its parent component (*a static mesh or skeletal mesh*). The deformation is only visual.
 :::
 
 <details>

@@ -46,7 +46,7 @@ With this option you can improve (or when set incorrectly decrease) the performa
     - If you have a cube, you probably want a equal distribution of groups ($X = Y = Z$)
     - If you have a cuboid, you probably do not want an equal distribution (because one axis is "longer" and thus has more vertices than the other two)
 </details>
-:::info
+:::tip
 You can visualize the groups using the *vertexmode* in the [viewport](./explorer.md#viewport) and also see their vertex count in the groups list.
 :::
 

@@ -49,7 +49,7 @@ If you like video tutorials you may have a look at this tutorial. It was created
     - Go to your *Deformable Mesh Component* and use your created *Deformation Material(s)* as [**Material Overrides**](../guides/mesh-component/settings.md#material-overrides):<br/><img src={Override}/>
 
 :::warning
-Make sure to supply **as many materials as your static mesh needs**! If the static mesh has 8 materials slots, then you should override all 8 materials! But you don't have to override all 8 materials with deformation materials - you can also just choose the default material here.
+Make sure to supply **as many materials as your static mesh needs**! If the static mesh has 8 materials slots, then you should override all 8 materials! But you don't have to override all 8 materials with deformation materials - you can also just choose the original material here.
 :::
 
 ## Advanced / Custom Setup

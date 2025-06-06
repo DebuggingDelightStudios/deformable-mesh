@@ -34,7 +34,7 @@ You can only have **one** protection box and **only as a children** as of versio
 The first way of implementing protection boxes is by placing them right below your *Deformable Mesh Component*, as you can see in the following image:<br/><img src={ExampleHierarchy} style={{maxWidth: "50%"}} />
 
 :::info
-After changing your protection boxes at runtime, e.g. removing / adding / moving it, then you have to call the function **Update Protection Boxes**. Otherwise the changes will not be taken into account and the "old" protection boxes will still be used.
+After changing your protection boxes at runtime, e.g. removing / adding / moving it, you have to call the function **Update Protection Boxes**. Otherwise the changes will not be taken into account and the "old" protection boxes will still be used.
 :::
 
 ## Setup 2: Groups (V 2.1)

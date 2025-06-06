@@ -18,9 +18,9 @@ This is the [Deformable Mesh (Asset)](../mesh-asset/overview.md) that you create
 - **Collision Type Restriction** (optional): Only deform when hitting components that have this collision type. By default there is no restriction.
 - **Actor Type Restriction** (optional): Only deform when hitting an actor of this type. By default there is no restriction.
 - **Disable Hit**: Disable new hits completely. (temporary?)
-- **Ignore Self Hits** (*V 2.1*): Do not trigger a deformation when we are hit by ourselves. If activated the hit will be ignored as soon as possible. Useful when working with physics objects that are constraint to the actor. For example a physics door that may hit the vehicle. See: [Attachments](../../advanced-guides/vehicles/attachments.md)
-- **Receive Forwarded Hits** (*V 2.1*): Can we receive forwarded hits from other deformable mesh components? See: [Attachments](../../advanced-guides/vehicles/attachments.md)
-- **Generate Forwarded Hits** (*V 2.1*): Forward hits to other deformable mesh components when appropriate? See: [Attachments](../../advanced-guides/vehicles/attachments.md)
+- **Ignore Self Hits** (*V 2.1*): Do not trigger a deformation when we are hit by ourselves. If activated the hit will be ignored as soon as possible. Useful when working with physics objects that are constraint to the actor. For example a physics door that may hit the vehicle. Used by [Attachments](../../advanced-guides/vehicles/attachments.md).
+- **Receive Forwarded Hits** (*V 2.1*): Can we receive forwarded hits from other Deformable Mesh Components? Used by [Attachments](../../advanced-guides/vehicles/attachments.md).
+- **Generate Forwarded Hits** (*V 2.1*): Forward hits to other Deformable Mesh Components when appropriate? Used by [Attachments](../../advanced-guides/vehicles/attachments.md). Whether a hit should be forwarded to a specific Deformable Mesh Component or not is determined by the size of the impact sphere and whether the sphere is overlapping with another Deformable Mesh Component.
 
 ## Deformation
 
@@ -48,13 +48,13 @@ Defines how damage (*per vertex*) is distributed based on distance to the center
 Minimum / Maximum Impact Radius (in cm). It affects how many vertices can move (deform) in a single impact. The minimum size corresponds to a very low force impact and the maximum size corresponds to a very high force impact. You can visualize this using the "[*Debug Impact*](#debug)" setting.
 
 ### Protection - Groups (V 2.1) {#protection-groups}
-This is an optional setting. You can protect a predefined zone (box) from deformation with protection boxes. By default only *ProtectionBoxComponents* that are **direct** children of this component are taken into account. With this setting you can additionally take *ProtectionBoxComponents* into account, that are somewhere else in the component hierarchy. The groups are also defined inside the *ProtectionBoxComponents*. For more information see [Protection Box](../../advanced-guides/protectionbox.md)
+This is an optional setting. You can protect a predefined zone (box) from deformation with protection boxes. By default only *ProtectionBoxComponents* that are **direct** children of the Deformable Mesh Component are taken into account. With this setting you can additionally take *ProtectionBoxComponents* into account, that are somewhere else in the component hierarchy. The groups are also defined inside the *ProtectionBoxComponents*. For more information see [Protection Box](../../advanced-guides/protectionbox.md).
 
 ### None Physics - Mass Override
-This value (in kg) overrides the *mass* of the parent component (*skeletal or static mesh*) that is used to calculate the deformation. This setting is **mandatory** if the parent component *does not* simulate physics.
+This value (in kg) overrides the *mass* of the parent component (*skeletal or static mesh*) that is **used to calculate the deformation**. This setting is **mandatory** if *none* of the parent components simulate physics. This setting ONLY affects the deformation calculation! The actual mass is NOT changed.
 
-:::info
-This setting ONLY affects the deformation calculation! The actual mass is NOT changed.
+:::warning Attached Components
+Even components that are configured to *not* simulate physics may simulate physics when begin attached to a component that *does* simulate physics! When being attached to physics simulating components, the above settings is optional.
 :::
 
 ### NoiseEffects
@@ -63,7 +63,7 @@ This setting ONLY affects the deformation calculation! The actual mass is NOT ch
 
 ### Advanced / Miscellaneous {#deformation-advanced}
 #### Ignore Actor Component Origins (V 2.1) {#ignore-actor-component-origins}
-Ignore any [Deformation Origin Component](../../advanced-guides/deformation-origin.md) of type ``Actor``. Make sure to use ``FindOriginComponent`` and to set the ``OriginComponent`` property manually when changing this at *runtime*!
+Ignore any [Deformation Origin Component](../../advanced-guides/deformation-origin.md) of type ``Actor``. Make sure to use ``FindOriginComponent`` and set the ``OriginComponent`` property of your Deformable Mesh Components manually after changing this at *runtime*!
 
 ## Sound
 
@@ -158,6 +158,6 @@ This setting can be used to play a **sound** (SFX) and/or to spawn a *niagara* *
 An *impact effect* with ``CheckPhysicalMaterial = False`` and ``CheckPhysicalSurfaceType = False`` (*see image below*) is used as the **default** impact effect, whenever no other impact effect was found for a physical material.
 :::
 
-You can define multiple *impact effects*. They are evaluated on impact, we select a impact effect by comparing the physical material of the component that we hit and the specified *physical material* or *physical surface type* of the impact effect.
+You can define multiple *impact effects*. They are evaluated on impact. We select an impact effect by comparing the physical material of the component that we hit with the specified *physical material* or *physical surface type* of the impact effect.
 
 <img src={ImpactEffect} style={{maxWidth: "50%"}} />

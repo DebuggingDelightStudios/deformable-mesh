@@ -38,14 +38,25 @@ Called after a *LOD* (*RealtimeMesh*) or a *Section* (*ProceduralMesh*) is updat
 
 ## After Impact
 
-<img src={EventAfterImpact} style={{float: "right", maxWidth: "50%"}} />
+<img src={EventAfterImpact} style={{float: "right", maxWidth: "50%", marginLeft: 8}} />
 
 Event for impact handling. Called after an impact happened. Can be used e.g. for damage display.
 
-**Is Real Impact**: This is *true* for hits that were triggered by an actual hit. It is *false* when the hit was "*replayed*" from the hit history (see [Network Replication](./replication.md)). In most cases you want to ignore hits that are "*not real*"
+**Hit Type**: What kind of hit happened? There are three type of hits:
+- ``Normal``: A normal hit that *just* happened and was triggered by ``OnComponentHit``. *This is independent of replication.*
+- ``History``: A hit that happened **in the past** and was triggered by [replication](./replication.md) of the ``HitHistory``.
+- ``ForwardedNormal``: A hit that *just* happened and was triggered by ``OnComponentHit`` of **another** *Deformable Mesh Component* and was [forwarded](./settings.md#hit-settings) to this component. For more information see [Attachments](../../advanced-guides/vehicles/attachments.md).
 
-<img src={EventImpactData} style={{float: "right", maxWidth: "50%"}} />
+:::info Version 2.1
+Previously there was a *Is Real Impact* parameter but it has been replaced with the *Hit Type*. A ``Normal`` hit equals a **Real Impact**.
+:::
 
-**Impact Data**: This contains information about the hit, e.g. the location, strength and even the original hit result, but the *hit result* is only available for *real hits*.
+:::tip Example
+Most of the time you want to ignore ``History`` hits, because they are hits that happened in the past. Let's take the *Impact Effects* (SFX/VFX) for example, they should play/spawn when the component hits something. This obviously should only happen when a hit *just* happened and that's why we ignore ``History`` hits in this case.
+:::
+
+<img src={EventImpactData} style={{float: "right", maxWidth: "40%"}} />
+
+**Impact Data**: This contains information about the hit, e.g. the location, strength and even the original hit result, but the *hit result* is only available for *normal* and *forwarded normal* hits.
 
 <br/><br/>

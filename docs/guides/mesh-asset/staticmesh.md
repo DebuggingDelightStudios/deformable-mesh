@@ -11,6 +11,9 @@ import NotConnected from './img/boxtruck-not-connected.webp';
 import NotConnectedBlender from './img/boxtruck-not-connected-blender.gif';
 import OneSidedMesh from './img/OneSided-mesh.webp';
 
+import NaniteDisabled from './img/matrix-nanite-disabled.webp';
+import NaniteEnabled from './img/matrix-nanite-enabled.webp';
+
 When it comes to the static mesh that's used for the Deformable Mesh, the following aspects should be taken into account:
 
 - Your static mesh **SHOULD NOT** have overlapping vertices / faces / edges!
@@ -40,4 +43,12 @@ When it comes to the static mesh that's used for the Deformable Mesh, the follow
 <details>
     <summary>Example: One sided mesh</summary>
     <img src={OneSidedMesh} class="no-shadow" />
+</details>
+
+- Do NOT use **nanite meshes** when creating a Deformable Mesh. The static meshes used for the Deformable Meshes should **not** have nanite enabled, because they may end up looking like they use a wrong (*bad*) LOD when used in our Deformable Mesh Component. We do not support nanite.
+<details>
+    <summary>Example: Nanite Mesh</summary>
+    <img src={NaniteDisabled} class="no-shadow" />
+    Above: Nanite disabled, Below: Nanite enabled
+    <img src={NaniteEnabled} class="no-shadow" />
 </details>

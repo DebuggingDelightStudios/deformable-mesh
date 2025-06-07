@@ -89,11 +89,12 @@ This requires a *compatible material* that uses the vector param "**CarColor**" 
 
 ## Debug
 
-- **Debug Impact**: Debug the impact from a hit. Draws a sphere and prints a string
+- **Debug Impact**: Debug the impact from a hit. Draws a sphere and prints a string.
 - **Debug Impulse**: Debug the raw impulse from the hit (acceleration + force). Prints a string.
 - **Debug Vehicle Velocity**: Prints the current velocity ($cm/s$) in short intervals.
 - **Debug Networking**: Prints a string when an actor gets relevant and when a client is replicating hits.
-- **Debug Tasks**: Debug background tasks in log (*LogCategory: LogDeformableTask*)
+- **Debug Tasks**: Debug background tasks in log (*LogCategory: LogDeformableTask*).
+- **Debug Forwarded Hits** (V 2.1): Debug forwarded hits (that this component received).
 
 :::warning
 The *debug* settings have a negative impact on the performance. Do not keep them activated unless you need them.

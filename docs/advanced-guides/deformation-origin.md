@@ -42,13 +42,15 @@ If we calculate the above example using a *custom deformation origin* of let's s
 ## Component Types
 
 ### ``Component``
-Work in Progress
+A Deformation Origin Component of this type only changes the deformation origin for its direct parent Deformable Mesh Component.
 
 ### ``Actor``
-Work in Progress
+A Deformation Origin Component of this type changes the deformation origin for ***all*** Deformable Mesh Components of the current actor. There are two exceptions:
+- A Deformable Mesh Component has a ``Component``-Deformation Origin Component as children, in this case the ``Component`` wins.
+- A Deformable Mesh Component uses the [Ignore Actor Component Origins](../guides/mesh-component/settings.md#ignore-actor-component-origins) setting.
 
 ## Usage Examples
 
 ### Attachments (e.g. Bumpers) {#attachments}
 
-Work in Progress
+See [Attachments](vehicles/attachments.md#deformation-origin-component)

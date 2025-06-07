@@ -32,7 +32,7 @@ We include a **template** material that you can use as a base or as inspiration.
 You can also take a look at our [*example vehicle*](../installation/example.md), which also has a custom deformation material. It's located here: `/DeformableStaticMesh/Materials/Example/M_Deformable_TestVehicle`
 :::
 
-If you like video tutorials you may have a look at this tutorial. It was created using version 1.x but should still be relatively accurate:<iframe width="560" height="315" src="https://www.youtube.com/embed/GbmlwlhHJG8?si=l7Rb9yhkAlqPUM6B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+If you like video tutorials you may have a look at this tutorial. It was created using version 1.x but should still be relatively accurate:<iframe width="560" height="315" src="https://www.youtube.com/embed/GbmlwlhHJG8?si=l7Rb9yhkAlqPUM6B" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
 
 ## Setup using the Template
 

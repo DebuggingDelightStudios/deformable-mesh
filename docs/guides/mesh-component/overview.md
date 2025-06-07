@@ -14,15 +14,11 @@ The *Deformable Mesh Component* itself has **NO COLLISION**! It uses the collisi
 
 <details>
     <summary>Rough summary of deformation logic</summary>
-    <p>
-    During an impact, an area is formed at the location of the impact. Its size depends on the *Impact Radius*.
+    <p>During an impact, an area is formed at the location of the impact. Its size depends on the *Impact Radius*.
     In this area we look at which vertices are affected by the impact. This would not be easily possible by going through each individual vertical in a for each loop, looking at its position and checking whether this is in the formed area. 
-    This for each loop would be so extremely complex for the CPU while the game is running (i.e. the more detailed the mesh, the longer the loop) that it could lead to FPS drops or even application crashes.
-    </p>
-    <p>
-    That's why we decided to pre-sort and group all vertices with the tool before runtime so that in the event of an impact we only have to check whether a group of vertices is affected and then only check this small, relevant group of vertices in the loop whether it is affected. If relevant, these vertices are shifted in position from the opposite direction of impact and updated in the procedural mesh.
-    </p>
-    <p>
-    In order to make the whole thing even more realistic visually, we use this affected group in another procedure in which we change the vertex color to which a material instance can then react and then color scratches (via a mask) and dents (via the normal input) in this area.
-    </p>
+    This for each loop would be so extremely complex for the CPU while the game is running (i.e. the more detailed the mesh, the longer the loop) that it could lead to FPS drops or even application crashes.</p>
+    <p>That's why we decided to pre-sort and group all vertices with the tool before runtime so that in the event of an impact we only have to check whether a group of vertices is affected and then only check this small, relevant group of vertices in the loop whether it is affected. If relevant, these vertices are shifted in position from the opposite direction of impact and updated in the procedural mesh.</p>
+    <p>In order to make the whole thing even more realistic visually, we use this affected group in another procedure in which we change the vertex color to which a material instance can then react and then color scratches (via a mask) and dents (via the normal input) in this area.</p>
 </details>
+
+If you want to learn more about how the deformation works you can also take a look at the [Deformation Origin Component](../../advanced-guides/deformation-origin.md) topic.

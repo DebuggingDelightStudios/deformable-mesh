@@ -64,27 +64,29 @@ sidebar_position: 25
     - ``RandomCarColor`` is also replicated by default
 - ... many small things - too many to list them here :)
 
-### Version 2.1 (UPCOMING) {#version-21}
+### Version 2.1 (06/2025) {#version-21}
 :::info
 This version is not released yet.
 :::
 - **Support for Unreal Engine 5.6**
+- [Attachments](advanced-guides/vehicles/attachments.md)
+    - We now support attachments, learn more about them in the documentation.
+    - Hits are forwarded from one component to another.
+    - Optimized the [AfterImpact](guides/mesh-component/events.md)-Event for better attachment support.
+    - New settings: [Receive Forwarded Hits](guides/mesh-component/settings.md#hit-settings), [Generate Forwarded Hits](guides/mesh-component/settings.md#hit-settings), [Debug Forwarded Hits](guides/mesh-component/settings.md#debug), [Ignore Self Hits](guides/mesh-component/settings.md#hit-settings).
+- [Deformation Origin Component](./advanced-guides/deformation-origin.md)
+    - Learn how our deformation works in detail.
+    - Choose where the origin of the deformation should be, per component and/or for the entire actor.
+    - New setting: [Deformation - Ignore Actor Component Origins](guides/mesh-component/settings.md#ignore-actor-component-origins): *Ignore any Deformation Origin Component of type ``Actor``.*
 - Enhanced [Protection Boxes](./advanced-guides/protectionbox.md)
-    - You can have multiple Protection Boxes instead of only one.
-    - The Protection Boxes can be grouped and don't have to be a children of the *Deformable Mesh Component* anymore.
+    - You can have multiple protection boxes instead of only one.
+    - Protection boxes can be grouped and don't have to be a children of the *Deformable Mesh Component* anymore.
 - Enhanced [Deformation Materials](./advanced-guides/deformation-material.md)
     - Refactored the template material and extended the existing documentation.
-- New [Deformation Origin Component](./advanced-guides/deformation-origin.md)
-    - Choose where the origin of the deformation should be, per component and/or for the entire actor.
-- New Component Setting(s)
-    - [Hit - Ignore Self Hits](guides/mesh-component/settings.md#hit-settings): *Do not trigger a deformation when we are hit by ourselves.*
-    - [Hit - Receive Forwarded Hits](guides/mesh-component/settings.md#hit-settings)
-    - [Hit - Generate Forwarded Hits](guides/mesh-component/settings.md#hit-settings)
-    - [Deformation - Ignore Actor Component Origins](guides/mesh-component/settings.md#ignore-actor-component-origins): *Ignore any Deformation Origin Component of type ``Actor``.*
-    - [Experimental - Impact Effects](guides/mesh-component/settings.md#impact-effects): *Define SFX / VFX for specific Physical Materials*
-- Deprecated Component Setting(s):
-    - [Sound - Impact Sound](guides/mesh-component/settings.md#impact-sound): *See [Impact Effects](guides/mesh-component/settings.md#impact-effects)*
-    - [Experimental - Impact Particles](guides/mesh-component/settings.md#impact-particles): *See [Impact Effects](guides/mesh-component/settings.md#impact-effects)*
-- Optimized the [AfterImpact](guides/mesh-component/events.md)-Event for better attachment support.
-- Refactored the included ExampleCar-Blueprint (*renamed some components*)
-- Extended the documentation for advanced topics, e.g. [Chaos Vehicle](advanced-guides/vehicles/chaos-vehicle.md) and [Attachments](advanced-guides/vehicles/attachments.md). *We are still working on these topics.*
+- Enhanced SFX/VFX (*Impact Effects*)
+    - New setting: [Experimental - Impact Effects](guides/mesh-component/settings.md#impact-effects): *Define SFX / VFX for specific physical materials / surfaces*.
+    - Deprecated settings: [Sound - Impact Sound](guides/mesh-component/settings.md#impact-sound), [Experimental - Impact Particles](guides/mesh-component/settings.md#impact-particles).
+- Miscellaneous
+    - Refactored the included *ExampleCar*-Blueprint (*renamed some components*).
+    - Changed the default value of *Max Hit Deform Percentage* to 0.2 (was 0.5).
+    - Extended the documentation for advanced topics, e.g. [Chaos Vehicle](advanced-guides/vehicles/chaos-vehicle.md) and [Attachments](advanced-guides/vehicles/attachments.md). *We are still working on these topics.*

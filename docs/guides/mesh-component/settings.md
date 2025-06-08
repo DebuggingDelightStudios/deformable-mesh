@@ -25,13 +25,13 @@ This is the [Deformable Mesh (Asset)](../mesh-asset/overview.md) that you create
 ## Deformation
 
 ### Max Deform Percentage
-Maximum deformation in percent. The exact value depends on the distance of the vertex to the mesh origin, e.g. a vertex that is far out can achieve a much higher deformation than a vertex that is located near the origin.
+Maximum deformation in percent. The exact value depends on the distance of the vertex to the deformation origin, e.g. a vertex that is far out can achieve a much higher deformation than a vertex that is located near the origin. Learn more about how the deformation works [here](../../advanced-guides/deformation-origin.md).
 
 ### Max Hit Deform Percentage
-Maximum deformation in a *single impact*, e.g. 10%, means that at least 10 hits (10 x 10% = 100%) are required to achieve the "*Max Deform Percentage*".
+Maximum deformation in a *single impact*, e.g. 10%, means that at least 10 hits (10 x 10% = 100%) are required to achieve the ``Max Deform Percentage``.
 
 ### Max Hit Acceleration
-Acceleration ($m/s²$) required to achieve "*Max Hit Deform Percentage*". Can be measured with the debug setting "[*Debug Vehicle Velocity*](#debug)".
+Acceleration ($m/s²$) required to achieve "*Max Hit Deform Percentage*". Can be measured with the debug setting [``Debug Vehicle Velocity``](#debug).
 
 ### Impact Registration Interval
 Delay (*in seconds*) between the next hit that can processed. With this setting, hits that follow each other too quickly are ignored (*for performance reasons*).
@@ -45,7 +45,7 @@ Defines how damage (*per vertex*) is distributed based on distance to the center
 - Y-Axis: Amount of deformation. Value range: $[0.0, 1.0]$
      
 ### Radius
-Minimum / Maximum Impact Radius (in cm). It affects how many vertices can move (deform) in a single impact. The minimum size corresponds to a very low force impact and the maximum size corresponds to a very high force impact. You can visualize this using the "[*Debug Impact*](#debug)" setting.
+Minimum / Maximum Impact Radius (in cm). It affects how many vertices can move (deform) in a single impact. The minimum size corresponds to a very low force impact and the maximum size corresponds to a very high force impact. You can visualize this using the [``Debug Impact``](#debug) setting.
 
 ### Protection - Groups (V 2.1) {#protection-groups}
 This is an optional setting. You can protect a predefined zone (box) from deformation with protection boxes. By default only *ProtectionBoxComponents* that are **direct** children of the Deformable Mesh Component are taken into account. With this setting you can additionally take *ProtectionBoxComponents* into account, that are somewhere else in the component hierarchy. The groups are also defined inside the *ProtectionBoxComponents*. For more information see [Protection Box](../../advanced-guides/protectionbox.md).
@@ -82,7 +82,7 @@ Maximum number of hits that are replicated. Additional hits overwrite the oldest
 
 ### Material Overrides
 If specified, these Materials will be applied to the created Procedural-/Realtime Mesh instead of the materials of the original static mesh. This is useful if you e.g. want to use custom deformation materials but do not want to change the original static mesh. Make sure to supply as may materials as the original static mesh has.
-*Previously known as "Vehicle Material(s)"*
+*Previously known as "Vehicle Material(s)".*
 
 ### Use Random Car Color
 This requires a *compatible material* that uses the vector param "**CarColor**" to colorize the mesh. The random color is also stored in the component's *CarColor* variable (which is replicated).
@@ -139,18 +139,22 @@ Bounds are NOT collision!
 
 ## Experimental
 
+import ImpactEffect from './img/settings-impact-effect.png';
+
 ### Collision Damping
-Dampens the force that throws the vehicle back like a rubber ball after an impact. Alternatively you can also use "*Physical Material Restitution*" of your [Physical Materials](https://dev.epicgames.com/documentation/en-us/unreal-engine/physical-materials-reference-for-unreal-engine). Our implementation can be customized using the *Restitution Coefficient*.
+Dampens the force that throws the vehicle back like a rubber ball after an impact. Alternatively you can also use ``Physical Material Restitution`` of your [Physical Materials](https://dev.epicgames.com/documentation/en-us/unreal-engine/physical-materials-reference-for-unreal-engine). Our implementation can be customized using the ``Restitution Coefficient`` setting.
 
 ### Impact Particles (DEPRECATED V 2.1) {#impact-particles}
-**Deprecated, see [Impact Effects](#impact-effects) instead.** When "*Impact Particle On Impact*" is activated the specified "*Impact Niagara Particle*" system is spawned on every impact (hit) at the hit location. See our example niagara particle system for reference.
+**Deprecated, see [Impact Effects](#impact-effects) instead.** When ``Impact Particle On Impact`` is activated the specified ``Impact Niagara Particle`` system is spawned on every impact (hit) at the hit location. See our example niagara particle system for reference.
 
 ### Hazard Lights
-When "*Hazard Lights On Impact*" is activated, the hazard lights are activated for the deformable mesh on impact. This requires a *compatible material*, that make use of the ``IndicatorStatus`` and ``HazardStatus`` material parameters to display the status. Take our [example deformation material](../../installation/example.md) `M_Deformable_TestVehicle` for reference. You can read more about materials [here](../../advanced-guides/deformation-material.md).
+When ``Hazard Lights On Impact`` is activated, the hazard lights are activated for the deformable mesh on impact. This requires a *compatible material*, that make use of the ``IndicatorStatus`` and ``HazardStatus`` material parameters to display the status. Take our [example deformation material](../../installation/example.md) `M_Deformable_TestVehicle` for reference. You can read more about materials [here](../../advanced-guides/deformation-material.md).
 - ``IndicatorStatus``: 1 = Hazard (*0 and 2 could be left/right indicators, but they are not relevant for this use case*)
 - ``HazardStatus``: 0 = Hazard lights OFF, 1 = Hazard lights ON
 
-import ImpactEffect from './img/settings-impact-effect.png';
+### Min Velocity For Hit (V 2.1) {#min-velocity-for-hit}
+This is the minimum velocity ($cm/s$) that's required to trigger a deformation. 0 disables this check. If both the velocity of this actor and the velocity of the hit actor is lower than this, no deformation is triggered. The velocity can be measured with the debug setting [``Debug Vehicle Velocity``](#debug). This is an attempt to prevent the deformation
+from "eating into the mesh" when e.g. driving continuously against an object.
 
 ### Impact Effects (V 2.1) {#impact-effects}
 This setting can be used to play a **sound** (SFX) and/or to spawn a *niagara* **particle system** (VFX) on impact. You don't *have to* select a sound and a particle system - if you don't want to play a sound or spawn a particle system then just leave the properties empty or remove the whole impact effect. 

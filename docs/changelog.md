@@ -65,9 +65,6 @@ sidebar_position: 25
 - ... many small things - too many to list them here :)
 
 ### Version 2.1 (06/2025) {#version-21}
-:::info
-This version is not released yet.
-:::
 - **Support for Unreal Engine 5.6**
 - [Attachments](advanced-guides/vehicles/attachments.md):
     - We now support attachments, learn more about them in the documentation.
@@ -91,3 +88,4 @@ This version is not released yet.
     - Changed the default value of *Max Hit Deform Percentage* to 0.2 (was 0.5).
     - Extended the documentation for advanced topics, e.g. [Chaos Vehicle](advanced-guides/vehicles/chaos-vehicle.md) and [Attachments](advanced-guides/vehicles/attachments.md). *We are still working on these topics.*
     - New setting: [Experimental - Min Velocity For Hit](guides/mesh-component/settings.md#min-velocity-for-hit).
+    - Errors and warnings are now additionally displayed in the editor.

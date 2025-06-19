@@ -29,16 +29,16 @@ We include one drivable car and an example map on which the deformation can be t
       <div style={{width: "50%"}}>**Left**: Vehicle while in editor (only skeletal mesh is visible)</div>
       <div style={{width: "50%"}}>**Right**: Vehicle while playing (Deformable Mesh is visible)</div>
     </div>
-    **Location**: /Plugins/DeformableStaticMesh/Content/Example/ChaosVehicleExample/
+    **Location**: `/Plugins/DeformableStaticMesh/Content/Example/ChaosVehicleExample/`
 
-    The example car is a ChaosVehicle (``AWheeledVehiclePawn``) that uses a _placeholder skeletal mesh_. This is NOT necessary, but because the skeletal mesh is only used for collision it (*most of the time*) does not matter how it looks. For more information see: [**Chaos Vehicle**](../advanced-guides/vehicles/chaos-vehicle.md)
+    The example car is a ChaosVehicle (``AWheeledVehiclePawn``) that uses a _placeholder skeletal mesh_. This is NOT necessary, but because the skeletal mesh is only used for collision it (*most of the time*) does not matter how it looks. For more information see: [**Chaos Vehicle**](../advanced-guides/vehicles/chaos-vehicle.md).
 
-    There is a special material override that overrides the default material of the mesh with a [_deformable_ material](../advanced-guides/deformation-material.md) (`/DeformableStaticMesh/Content/Materials/Example/M_Deformable_TestVehicle`). This makes dents even more visible and enables hazard lights. In addition to that there's also a [protection box](../advanced-guides/protectionbox.md) that prevents the driver side (left) from deforming too much.
+    There is a special material override that overrides the default material of the mesh with a [_deformation_ material](../advanced-guides/deformation-material.md) (`/DeformableStaticMesh/Content/Materials/Example/M_Deformable_TestVehicle`). This makes dents even more visible and enables hazard lights. In addition to that there's also a [protection box](../advanced-guides/protectionbox.md) that prevents the driver side (left) from deforming too much.
 
     Other than that it's really just a simple _ChaosVehicle_ with basic movement and three special shortcuts:
     - **R**: Reset Vehicle (position)
     - **E**: Reset Deformation
-    - **Z**: Toggle Scratchmask (= deformable material)
+    - **Z**: Toggle Scratchmask (= deformation material)
 
     Here are some useful links for ChaosVehicles in general:
     - [How to Set up Vehicles (UE Documentation)](https://dev.epicgames.com/documentation/en-us/unreal-engine/how-to-set-up-vehicles-in-unreal-engine)
@@ -50,13 +50,13 @@ We include one drivable car and an example map on which the deformation can be t
       <img src={ExampleMapOverview} style={{width: "50%"}} />
     </div> -->
     <img src={ExampleCarStaticMesh} />
-    **Location**: /Plugins/DeformableStaticMesh/Content/Example/StaticMeshExample/BP_DeformationExampleStaticMesh
+    **Location**: `/Plugins/DeformableStaticMesh/Content/Example/StaticMeshExample/BP_DeformationExampleStaticMesh`
 
     This actor is an example of how to use our component with pure static meshes. We're not limited to vehicles, but we already include the vehicle asset so we're just gonna reuse it for this purpose. One of the actors' static mesh is simulating physics and the other is not. We support both cases.
   </TabItem>
   <TabItem value="map" label="Map">
     <img src={ExampleMapOverview}/>
-    **Location**: /Plugins/DeformableStaticMesh/Content/Map/
+    **Location**: `/Plugins/DeformableStaticMesh/Content/Map/`
 
     - Swings (*left*)
     - Balls falling from the sky (*between the two big ramp*s)

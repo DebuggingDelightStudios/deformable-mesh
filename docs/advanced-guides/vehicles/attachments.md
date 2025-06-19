@@ -88,15 +88,3 @@ Since we always deform *towards the origin* / pivot of the respective mesh (expl
     <p>The second image demonstrates how the deformation would look like when the pivot (or deformation origin) of the bumper is the center of the vehicle (the mesh it's attached to). Way better!</p>
     <img src={PoliceCarOriginCustom} className="no-shadow" />
 </details>
-
-<!-- ## Work In Progress
-
-Ignore Self Hits
-Receive Forwarded Hits
-Generate Forwarded Hits
-
--->
-
-:::info
-We're still working on this guide :)
-:::

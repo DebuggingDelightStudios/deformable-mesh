@@ -89,3 +89,13 @@ sidebar_position: 25
     - Extended the documentation for advanced topics, e.g. [Chaos Vehicle](advanced-guides/vehicles/chaos-vehicle.md) and [Attachments](advanced-guides/vehicles/attachments.md). *We are still working on these topics.*
     - New setting: [Experimental - Min Velocity For Hit](guides/mesh-component/settings.md#min-velocity-for-hit).
     - Errors and warnings are now additionally displayed in the editor.
+
+### Version NEXT (UPCOMING) {#version-22}
+:::info
+This version is not released yet.
+:::
+- Bugfixes:
+    - The `After Impact` event sometimes triggered *while* the impact happened and not *after* the impact happened.
+    - Fixed an issue with RMC in Unreal Engine 5.5 (*only affecting multiplayer games*).
+- Optimizations:
+    - Only replicate hits that are actually processed. Previously we also replicated hits, that would not have been processed due to `Impact Registration Interval`.

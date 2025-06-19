@@ -3,6 +3,8 @@ sidebar_position: 2
 description: RealtimeMeshComponent vs. ProceduralMeshComponent
 ---
 
+import RmcUproject from './img/rmc-uproject.png';
+
 # Realtime Mesh Component
 
 > The RealtimeMeshComponent or more commonly RMC, is a functional replacement to the ProceduralMeshComponent and DynamicMeshComponent. The RMC is more efficient at rendering than either component while also being far more flexible than both components. You can still use all the DynamicMesh Geometry Scripting tools while enjoying the benefits of a faster renderer, or you can take a more direct approach and feed raw mesh data into the component.
@@ -33,9 +35,12 @@ At the moment there is *no* Unreal Engine 5.5 version of the *Realtime Mesh (Cor
 1. Get the *free* "[Realtime Mesh - Core](https://fab.com/s/41804ec36805)" plugin from the FAB Marketplace.
 2. Download and install the plugin to your engine using the epic games launcher.
 3. (Optional) Move the downloaded plugin to your project's plugin folder.
-    - Default Installation Location: ``C:\Program Files\Epic Games\UE_[version]\Engine\Plugins``
-4. Enable the plugin in your project: **Edit > Plugins**. Restart the Engine afterwards.
-5. Et voila, Deformable Meshes should use *RealtimeMeshComponent* now. You can double check it by visiting the [project settings](./configuration.md#component-settings) and check the value of ``ActiveMeshType``.
+    - Default Installation Location: ``C:\Program Files\Epic Games\UE_[version]\Engine\Plugins\Marketplace\``
+4. Enable the RMC plugin in your project: **Edit > Plugins**. Save and close the editor.
+5. Make sure your `uproject` file contains at least two plugin entries, one for "*RealtimeMeshComponent*" and one for "*DeformableStaticMesh*" that are both enabled as you can see in the image below: <br/><img src={RmcUproject} />
+5. Open your project e.g. with Visual Studio and build it. That's it.
+    - There should be a message like "*DeformableMeshComponent: Using RealtimeMeshComponent!*" in the *build* output (when building the project).
+6. Et voila, Deformable Meshes should use *RealtimeMeshComponent* now. You can double check it by visiting the [project settings](./configuration.md#component-settings) and check the value of ``ActiveMeshType``.
     - Alternatively there is also an ``MeshType`` property inside every *DeformableMeshComponent*.
-6. In case this *does not* work, try to clean your solution (delete _intermediate_ + _binaries_ folder of your project and plugin) and rebuild your solution. 
+7. In case this *does not* work, try to clean your solution (delete _intermediate_ + _binaries_ folder of your project and plugin) and rebuild your solution. 
     - When switching from PMC to RMC (or vice versa) we actually un-/define a C++ preprocessor ``USE_RMC`` and this switches everything inside our component and the tool to the respective mesh component type. This logic is triggered inside the plugin's _build.cs_ file.

@@ -39,15 +39,11 @@ TODO: Collisions? PhysicalAsset?
 ## Setup
 
 1. Create a [Deformable Mesh](../../guides/mesh-asset/overview.md) of your vehicle's static mesh (see [Requirements](#requirements)) using the [Deformation Data Tool](../../guides/mesh-tool/asset-management.md#create-a-new-deformable-mesh).
-2. Add a **Deformable Mesh Component** to your actor **directly below** the *VehicleMesh*:<br/><img src={CompAdd} style={{maxWidth: "45%", verticalAlign: "top"}} /><img src={ExampleCarDeformable} style={{maxWidth: "50%" }} />
-3. Make sure the "*VehicleMesh*"...
+2. Add a **Deformable Mesh Component** to your actor **directly below** the `VehicleMesh`:<br/><img src={CompAdd} style={{maxWidth: "45%", verticalAlign: "top"}} /><img src={ExampleCarDeformable} style={{maxWidth: "50%" }} />
+3. Make sure the `VehicleMesh`...
     - ... is visible and *not* hidden.
     - ... has collision enabled (**IMPORTANT**).
     - ... has ``Simulation Generates Hit Events`` enabled (**IMPORTANT**).
-4. Select the previously created *Deformable Mesh Component* (**DMC_Vehicle**) and configure it (see [Settings](../../guides/mesh-component/settings.md)). The most important settings are:<br/><img src={CompDetails}/>
+4. Select the previously created *Deformable Mesh Component* (`DMC_Vehicle`) and configure it (see [Settings](../../guides/mesh-component/settings.md)). The most important settings are:<br/><img src={CompDetails}/>
     - *[**MANDATORY**] Settings - [Deformable Mesh](../../guides/mesh-component/settings.md#general)*: Here you have to select your Deformable Mesh (see Step 1).
 5. You're done!
-
-:::info
-We're still working on this guide :)
-:::

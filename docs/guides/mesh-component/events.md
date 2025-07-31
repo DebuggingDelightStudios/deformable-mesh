@@ -60,3 +60,7 @@ Most of the time you want to ignore ``History`` hits, because they are hits that
 **Impact Data**: This contains information about the hit, e.g. the location, strength and even the original hit result, but the *hit result* is only available for *normal* and *forwarded normal* hits.
 
 <br/><br/>
+
+## Before Impact
+
+This event is similar to [After Impact](#after-impact) but it triggers *before* the hit is processed.

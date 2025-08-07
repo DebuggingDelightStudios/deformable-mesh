@@ -98,8 +98,10 @@ This version is not released yet.
 - Bugfixes:
     - The `After Impact` event sometimes triggered *while* the impact happened and not *after* the impact happened.
     - Fixed an issue with RMC in Unreal Engine 5.5 (*only affecting multiplayer games*).
+    - Only one [Impact Effect](guides/mesh-component/settings.md#impact-effects) could be triggered at a time.
 - Optimizations:
     - Only replicate hits that are actually processed. Previously the component sometimes replicated hits, that would not have been processed due to `Impact Registration Interval`.
 - Miscellaneous:
     - New [Before Impact](guides/mesh-component/events.md#before-impact) event that is triggered *before* a hit is processed.
     - Both `After Impact` and `Before Impact` events now include a *Component* parameter (which is the DeformableMeshComponent that triggered the event).
+    - New Settings ``Min Velocity`` and ``Max Velocity`` for [Impact Effect](guides/mesh-component/settings.md#impact-effects).

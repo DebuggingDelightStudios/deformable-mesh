@@ -12,6 +12,9 @@ import ExampleGroupsHierarchy from './img/hit-zone-ex-groups-hierarchy.png';
 import ExampleGroupsBoxSett from './img/hit-zone-ex-groups-box.png';
 import ExampleGroupsCompSett from './img/hit-zone-ex-groups-comp.png';
 
+import DetectedEvent from './img/hit-zone-detected.png';
+import AlertEvent from './img/hit-zone-alert.png';
+
 <img src={Component} />
 
 A **Hit Zone** can be used to detect hits on predefined areas of your mesh. This could be used for example to detect hits on the front of your vehicle and damage the motor accordingly.
@@ -51,14 +54,16 @@ If you want to use **one** Hit Zone for **multiple** *Deformable Mesh Components
 	- There were 3 hits, one 50% and two 25% hits... and so on.
 
 	Each new hit can add a maximum value of 1.0 (= hit with max hit deform),
-	because the ImpactStrength is capped by the DeformableMeshComponent Setting [Max Hit Deform Percentage](../guides/mesh-component/settings.md#max-hit-deform-percentage).
+	because the ``ImpactStrength`` is capped by the DeformableMeshComponent Setting [Max Hit Deform Percentage](../guides/mesh-component/settings.md#max-hit-deform-percentage).
 
 ## Events
 
 ### On Hit Detected
+<img src={DetectedEvent} />
 This event is triggered whenever a hit is detected inside the hit zone.
 
 ### On Hit Alert
+<img src={AlertEvent} />
 This event is triggered when a given threshold (`Alert Impact Strength`). When configured, it'll only trigger once after the threshold is reached (`Alert once`).
 
 ## Functions

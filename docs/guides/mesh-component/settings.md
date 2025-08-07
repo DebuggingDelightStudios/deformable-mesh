@@ -157,7 +157,7 @@ This is the minimum velocity ($cm/s$) that's required to trigger a deformation. 
 from "eating into the mesh" when e.g. driving continuously against an object.
 
 ### Impact Effects (V 2.1) {#impact-effects}
-This setting can be used to play a **sound** (SFX) and/or to spawn a *niagara* **particle system** (VFX) on impact. You don't *have to* select a sound and a particle system - if you don't want to play a sound or spawn a particle system then just leave the properties empty or remove the whole impact effect. 
+This setting can be used to play a **sound** (SFX) and/or to spawn one or more *niagara* **particle systems** (VFX) on impact. You don't *have to* select a sound and a particle system - if you don't want to play a sound or spawn a particle system then just leave the properties empty or remove the whole impact effect. 
 
 :::info
 An *impact effect* with ``CheckPhysicalMaterial = False`` and ``CheckPhysicalSurfaceType = False`` (*see image below*) is used as the **default** impact effect, whenever no other impact effect was found for a physical material.
@@ -166,3 +166,9 @@ An *impact effect* with ``CheckPhysicalMaterial = False`` and ``CheckPhysicalSur
 You can define multiple *impact effects*. They are evaluated on impact. We select an impact effect by comparing the physical material of the component that we hit with the specified *physical material* or *physical surface type* of the impact effect.
 
 <img src={ImpactEffect} style={{maxWidth: "50%"}} />
+
+With the new parameters ``Min Velocity`` and ``Max Velocity``, you can set the speeds at which the effect should occur and when it should not.
+
+:::warning Version 2.1.5
+``Min Velocity`` and ``Max Velocity`` are new settings.
+:::

@@ -90,10 +90,7 @@ sidebar_position: 25
     - New setting: [Experimental - Min Velocity For Hit](guides/mesh-component/settings.md#min-velocity-for-hit).
     - Errors and warnings are now additionally displayed in the editor.
 
-### Version NEXT (UPCOMING) {#version-22}
-:::info
-This version is not released yet.
-:::
+### Version 2.1.5 (08/2025) {#version-215}
 - New [Hit Zone Component](advanced-guides/hit-zone.md) and an example in the [Example Vehicle](installation/example.md) (engine smokes after several impacts).
 - Bugfixes:
     - The `After Impact` event sometimes triggered *while* the impact happened and not *after* the impact happened.
@@ -105,3 +102,10 @@ This version is not released yet.
     - New [Before Impact](guides/mesh-component/events.md#before-impact) event that is triggered *before* a hit is processed.
     - Both `After Impact` and `Before Impact` events now include a *Component* parameter (which is the DeformableMeshComponent that triggered the event).
     - New Settings ``Min Velocity`` and ``Max Velocity`` for [Impact Effect](guides/mesh-component/settings.md#impact-effects).
+
+### Version NEXT (UPCOMING) {#version-216}
+:::info
+This version is not released yet.
+:::
+- Miscellaneous:
+    - Removed Settings ``Min Velocity`` and ``Max Velocity`` for [Impact Effect](guides/mesh-component/settings.md#impact-effects) and replaced with ``Min Impact Strength`` and ``Max Impact Strength`` for better control.

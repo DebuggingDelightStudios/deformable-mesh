@@ -90,7 +90,7 @@ This requires a *compatible material* that uses the vector param "**CarColor**" 
 ## Debug
 
 - **Debug Impact**: Debug the impact from a hit. Draws a sphere and prints a string.
-- **Debug Impulse**: Debug the raw impulse from the hit (acceleration + force). Prints a string.
+- **Debug Impulse**: Debug the raw impulse from the hit (acceleration [m/s²], force [kN], impact strength [%]). Prints a string.
 - **Debug Vehicle Velocity**: Prints the current velocity ($cm/s$) in short intervals.
 - **Debug Networking**: Prints a string when an actor gets relevant and when a client is replicating hits.
 - **Debug Tasks**: Debug background tasks in log (*LogCategory: LogDeformableTask*).
@@ -167,8 +167,10 @@ You can define multiple *impact effects*. They are evaluated on impact. We selec
 
 <img src={ImpactEffect} style={{maxWidth: "50%"}} />
 
-With the new parameters ``Min Velocity`` and ``Max Velocity``, you can set the speeds at which the effect should occur and when it should not.
+With the new parameters ``Min Impact Strength`` and ``Max Impact Strength``, you can set the impact strength at which the effect should occur and when it should not. Note: **An impact effect only triggers if deformation has also occurred**.
+- Min Impact Strength: This is the minimum impact strength (_0 = small impact, [Max Hit Deform Percentage](#max-hit-deform-percentage) = big impact_) that's required to trigger this impact effect. It can be measured with the debug setting [Debug Impulse](#debug).
+- Max Impact Strength: The impact effect only triggers up to this impact strength (_0 = small impact, [Max Hit Deform Percentage](#max-hit-deform-percentage) = big impact_). The velocity can be measured with the debug setting [Debug Impulse](#debug).
 
-:::warning Version 2.1.5
-``Min Velocity`` and ``Max Velocity`` are new settings.
+:::warning Version 2.1.6
+``Min Impact Strength`` and ``Max Impact Strength`` are new settings.
 :::

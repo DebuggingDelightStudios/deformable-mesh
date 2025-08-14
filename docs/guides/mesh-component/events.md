@@ -57,7 +57,7 @@ Most of the time you want to ignore ``History`` hits, because they are hits that
 
 <img src={EventImpactData} style={{float: "right", maxWidth: "40%"}} />
 
-**Impact Data**: This contains information about the hit, e.g. the location, strength and even the original hit result, but the *hit result* is only available for *normal* and *forwarded normal* hits.
+**Impact Data**: This contains information about the hit, e.g. the location, strength and even the original hit result, but the *hit result* is only available for *normal* and *forwarded normal* hits. *Impact Strength* is between [Min Relevant Impact Strength](./settings#min-relevant-impact-strength) and [Max Hit Deform Percentage](./settings#max-hit-deform-percentage).
 
 <br/><br/>
 

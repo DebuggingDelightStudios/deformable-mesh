@@ -109,3 +109,4 @@ This version is not released yet.
 :::
 - Miscellaneous:
     - Removed Settings ``Min Velocity`` and ``Max Velocity`` for [Impact Effect](guides/mesh-component/settings.md#impact-effects) and replaced with ``Min Impact Strength`` and ``Max Impact Strength`` for better control.
+    - Basic documentation for [profiling](advanced-guides/performance-profiling.md)

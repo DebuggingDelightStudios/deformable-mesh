@@ -50,7 +50,8 @@ const config: Config = {
           // editUrl: `https://github.com/${organizationName}/${projectName}/tree/main/`,          
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
-          showLastUpdateTime: true
+          showLastUpdateTime: true,
+          exclude: ['**/faq/**'],
         },
         blog: false,
         // blog: {

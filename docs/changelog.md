@@ -103,10 +103,12 @@ sidebar_position: 25
     - Both `After Impact` and `Before Impact` events now include a *Component* parameter (which is the DeformableMeshComponent that triggered the event).
     - New Settings ``Min Velocity`` and ``Max Velocity`` for [Impact Effect](guides/mesh-component/settings.md#impact-effects).
 
-### Version NEXT (UPCOMING) {#version-216}
-:::info
-This version is not released yet.
-:::
+### Version 2.1.5.1 (09/2025) {#version-2151}
 - Miscellaneous:
     - Removed Settings ``Min Velocity`` and ``Max Velocity`` for [Impact Effect](guides/mesh-component/settings.md#impact-effects) and replaced with ``Min Impact Strength`` and ``Max Impact Strength`` for better control.
     - Basic documentation for [profiling](advanced-guides/performance-profiling.md)
+
+<!-- ### Version NEXT (UPCOMING) {#version-216}
+:::info
+This version is not released yet.
+::: -->

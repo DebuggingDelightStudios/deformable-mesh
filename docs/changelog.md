@@ -30,7 +30,7 @@ sidebar_position: 25
 - Collision damping has been improved and now functions more effectively.
 - And much more. 
 
-### Version 1.3.2 (01/2025) {#version-132}
+#### Version 1.3.2 (01/2025) {#version-132}
 - Fixed an error in the tool that caused the tool to lag when selecting assets.
 - C++ accessibility of all important functions, events and variables.
 - A new experimental feature: [**ProtectionBox**](./advanced-guides/protectionbox.md) Component, which can protect areas from deformation (for example driver's seat with driver).
@@ -90,7 +90,7 @@ sidebar_position: 25
     - New setting: [Experimental - Min Velocity For Hit](guides/mesh-component/settings.md#min-velocity-for-hit).
     - Errors and warnings are now additionally displayed in the editor.
 
-### Version 2.1.5 (08/2025) {#version-215}
+#### Version 2.1.5 (08/2025) {#version-215}
 - New [Hit Zone Component](advanced-guides/hit-zone.md) and an example in the [Example Vehicle](installation/example.md) (engine smokes after several impacts).
 - Bugfixes:
     - The `After Impact` event sometimes triggered *while* the impact happened and not *after* the impact happened.
@@ -103,12 +103,24 @@ sidebar_position: 25
     - Both `After Impact` and `Before Impact` events now include a *Component* parameter (which is the DeformableMeshComponent that triggered the event).
     - New Settings ``Min Velocity`` and ``Max Velocity`` for [Impact Effect](guides/mesh-component/settings.md#impact-effects).
 
-### Version 2.1.5.1 (09/2025) {#version-2151}
+#### Version 2.1.5.1 (09/2025) {#version-2151}
 - Miscellaneous:
     - Removed Settings ``Min Velocity`` and ``Max Velocity`` for [Impact Effect](guides/mesh-component/settings.md#impact-effects) and replaced with ``Min Impact Strength`` and ``Max Impact Strength`` for better control.
     - Basic documentation for [profiling](advanced-guides/performance-profiling.md)
 
-<!-- ### Version NEXT (UPCOMING) {#version-216}
+### Version 2.2 (10/2025) {#version-22}
+- Bugfixes:
+    - (Replication) The hit history may have been processed too early, making it appear as if no hits had been replicated.
+    - (Replication) The procedural mesh was sometimes not attached correctly for clients and was drive-through.
+    - (Replication) It was possible that in rare cases, the processing of the hit history could take place in the GameThread, which led to a crash.
+- Features:
+    - You can now change the deformable mesh dynamically using the function [`ChangeDeformableMesh`](guides/mesh-component/functions.md#change-deformable-mesh). Previously you were not able to change it while playing but now  you can!
+    - We now provide a material function [`MF_Deform`](advanced-guides/deformation-material.md#material-function) which you can use instead of copying or using our template material.
+    - *R-Tune exclusive*: Move and tilt your wheels on impact using the [`UpdateWheelPositions`](guides/mesh-component/functions.md#update-wheel-positions) function!
+- Miscellaneous:
+    - The [StaticMeshExample-Actor](installation/example.md) (*BP_DeformationExampleStaticMesh*) is now replicated and can switch between the *vehicle deformable mesh* and a *sphere deformable mesh* using [`ChangeDeformableMesh`](guides/mesh-component/functions.md#change-deformable-mesh). The key binding for this is "F".
+
+<!-- ### Version NEXT (UPCOMING) {#version-22}
 :::info
 This version is not released yet.
 ::: -->

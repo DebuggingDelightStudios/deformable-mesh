@@ -16,7 +16,7 @@ import ExampleMapOverview from './img/example-map-overview.webp';
 
 import CaptionWrapper from "@site/src/components/CaptionWrapper";
 
-We include one drivable car and an example map on which the deformation can be tested. 
+We include one drivable car, a static mesh example and an example map on which the deformation can be tested.
 
 <Tabs className="unique-tabs">
   <TabItem value="car-skeletal" label="Vehicle (Chaos)" default>
@@ -53,6 +53,8 @@ We include one drivable car and an example map on which the deformation can be t
     **Location**: `/Plugins/DeformableStaticMesh/Content/Example/StaticMeshExample/BP_DeformationExampleStaticMesh`
 
     This actor is an example of how to use our component with pure static meshes. We're not limited to vehicles, but we already include the vehicle asset so we're just gonna reuse it for this purpose. One of the actors' static mesh is simulating physics and the other is not. We support both cases.
+
+    **Version 2.2**: The StaticMeshExample-Actor is now replicated and can switch between the vehicle deformable mesh and a sphere deformable mesh using [`ChangeDeformableMesh`](guides/mesh-component/functions.md#change-deformable-mesh). The key binding for this is "F".
   </TabItem>
   <TabItem value="map" label="Map">
     <img src={ExampleMapOverview}/>
@@ -62,5 +64,8 @@ We include one drivable car and an example map on which the deformation can be t
     - Balls falling from the sky (*between the two big ramp*s)
     - Two vehicle spawner, that launch a accelerating vehicle towards the player (*in the back*)
     - Ramps, Obstacles, ...
+  </TabItem>
+  <TabItem value="cpp" label="C++">
+    `AExampleDeformableActor` demonstrates how the deformable mesh component can be used with C++. It shows you how to properly add the component to your actor.
   </TabItem>
 </Tabs>

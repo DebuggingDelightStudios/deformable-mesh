@@ -10,6 +10,7 @@ import ContentBrowser from './img/mat-content-browser.png';
 import InstanceTextures from './img/mat-instance-textures.png';
 import Result from './img/mat-result.webp';
 import Override from './img/mat-override.png';
+import MatFunction from './img/mat-function.png';
 
 import AdvancedVertexColor from './img/mat-advanced-VertexColor.webp';
 
@@ -34,7 +35,23 @@ You can also take a look at our [*example vehicle*](../installation/example.md),
 
 If you like video tutorials you may have a look at this tutorial. It was created using version 1.x but should still be relatively accurate:<iframe width="560" height="315" src="https://www.youtube.com/embed/GbmlwlhHJG8?si=l7Rb9yhkAlqPUM6B" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
 
-## Setup using the Template
+## Setup using the material function {#material-function}
+
+:::info Version 2.2
+The material function is included in Version 2.2.
+:::
+
+<img src={MatFunction}/>
+
+Not all inputs are mandatory, as you can see in the image above.
+- *Active*: True = Deformation material deforms on impact.
+- *BaseColor*: Base color of your vehicle. (RGBA)
+- *ScratchMask*: Here comes your custom scratch mask texture, which shows your car in a scratched condition. If not available, please connect your base color from the vehicle. (RGBA)
+- *OriginalNormal* : Original normal texture of your vehicle. (RGBA)
+- *CustomDamageNormal*: Here comes a custom dent normal texture for your vehicle. (RGBA)
+- *DamageNormalStrength*: Deformation strength.
+
+## Setup using the template
 
 1. You can either create a **material instance** of the template material or **copy and customize the template** and create a *material instance* of the copied material or add the "deformation logic" to your own materials (see [Advanced / Custom Setup](#advanced--custom-setup)).
 2. The material instance provides 5 configurable textures:<br/><img src={InstanceTextures}/>

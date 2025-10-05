@@ -14,7 +14,9 @@ import EventMeshUpdated from './img/event-MeshUpdated.png';
 
 <img src={EventMeshLoaded} style={{float: "right", maxWidth: "50%"}} />
 
-Called when the Deformable Mesh (Asset) is fully prepared and loaded.
+Called when the Deformable Mesh (Asset) is fully prepared and loaded. Also called when the deformable mesh is [changed](functions#change-deformable-mesh).
+
+**CAUTION**: This event may trigger before `BeginPlay` and therefore replicated variables are not available yet!
 
 **NOTE**: You should check ``bIsMeshLoaded`` before binding/waiting for this event to trigger, because the mesh may already be loaded!
 
@@ -22,7 +24,9 @@ Called when the Deformable Mesh (Asset) is fully prepared and loaded.
 
 <img src={EventMeshInitialized} style={{float: "right", maxWidth: "50%"}} />
 
-Called when the the actual mesh component (RMC/PMC) is initialized and visible.
+Called when the the actual mesh component (RMC/PMC) is initialized and visible. Also called when the deformable mesh is [changed](functions#change-deformable-mesh).
+
+**CAUTION**: This event may trigger before `BeginPlay` and therefore replicated variables are not available yet!
 
 **NOTE**: You should check ``bIsMeshInitialized`` before binding/waiting for this event to trigger, because the mesh may already be initialized!
 

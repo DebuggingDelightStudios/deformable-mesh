@@ -12,7 +12,6 @@ import ExampleUpdateWheelPositions from './img/example-UpdateWheelPositions.png'
 import FunctionChangeDeformableMesh from './img/function-ChangeDeformableMesh.png';
 import Example1ChangeDeformableMesh from './img/example-1-ChangeDeformableMesh.png';
 import Example2ChangeDeformableMesh from './img/example-2-ChangeDeformableMesh.png';
-import FunctionMaterial from './img/function-Material.png';
 
 ## Add Hit at Location
 
@@ -103,13 +102,3 @@ This function will move and tilt your wheels on impact depending on where the hi
     <p>`Update Wheel Options` is a variable inside that car actor, that contains appropriate values for that actor.</p>
     <img src={ExampleUpdateWheelPositions} className="no-shadow" />
 </details>
-
-## Material functions
-
-:::note Materials
-We may improve this part of the component in the future.
-:::
-
-These functions can be used to edit the materials of the visible mesh. You have to use these functions to modify your materials (e.g. lights), because only the procedural mesh is visible and you can not access it directly (yet).
-
-<img src={FunctionMaterial}/>

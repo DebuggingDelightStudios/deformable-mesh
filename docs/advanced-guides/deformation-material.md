@@ -29,13 +29,13 @@ The template was optimized / refactored in version 2.1 and may vary a bit in pre
 We include a **template** material that you can use as a base or as inspiration. It's located here: `/DeformableStaticMesh/Materials/Template`: 
 <img src={ContentBrowser} style={{maxWidth: "75%"}} />
 
+<br/><br/>
+
 :::info
 You can also take a look at our [*example vehicle*](../installation/example.md), which also has a custom deformation material. It's located here: `/DeformableStaticMesh/Materials/Example/M_Deformable_TestVehicle`
 :::
 
-If you like video tutorials you may have a look at this tutorial. It was created using version 1.x but should still be relatively accurate:<iframe width="560" height="315" src="https://www.youtube.com/embed/GbmlwlhHJG8?si=l7Rb9yhkAlqPUM6B" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-
-## Setup using the material function {#material-function}
+## Setup using the material function (MF_Deformation) {#material-function}
 
 :::info Version 2.2
 The material function is included in Version 2.2.
@@ -52,6 +52,9 @@ Not all inputs are mandatory, as you can see in the image above.
 - *DamageNormalStrength*: Deformation strength.
 
 ## Setup using the template
+
+If you like video tutorials you may have a look at this tutorial. It was created using version 1.x but should still be relatively accurate:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GbmlwlhHJG8?si=l7Rb9yhkAlqPUM6B" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
 
 1. You can either create a **material instance** of the template material or **copy and customize the template** and create a *material instance* of the copied material or add the "deformation logic" to your own materials (see [Advanced / Custom Setup](#advanced--custom-setup)).
 2. The material instance provides 5 configurable textures:<br/><img src={InstanceTextures}/>

@@ -148,6 +148,9 @@ Dampens the force that throws the vehicle back like a rubber ball after an impac
 **Deprecated, see [Impact Effects](#impact-effects) instead.** When ``Impact Particle On Impact`` is activated the specified ``Impact Niagara Particle`` system is spawned on every impact (hit) at the hit location. See our example niagara particle system for reference.
 
 ### Hazard Lights
+:::note Version > 2.2.1
+[Hazard lights](guides/mesh-component/settings.md#hazard-lights) are not included in the component itself anymore. The logic is very specific and that's why we moved it to the example car blueprint.
+:::
 When ``Hazard Lights On Impact`` is activated, the hazard lights are activated for the deformable mesh on impact. This requires a *compatible material*, that make use of the ``IndicatorStatus`` and ``HazardStatus`` material parameters to display the status. Take our [example deformation material](../../installation/example.md) `M_Deformable_TestVehicle` for reference. You can read more about materials [here](../../advanced-guides/deformation-material.md).
 - ``IndicatorStatus``: 1 = Hazard (*0 and 2 could be left/right indicators, but they are not relevant for this use case*)
 - ``HazardStatus``: 0 = Hazard lights OFF, 1 = Hazard lights ON

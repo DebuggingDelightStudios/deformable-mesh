@@ -120,14 +120,17 @@ sidebar_position: 25
 - Miscellaneous:
     - The [StaticMeshExample-Actor](installation/example.md) (*BP_DeformationExampleStaticMesh*) is now replicated and can switch between the *vehicle deformable mesh* and a *sphere deformable mesh* using [`ChangeDeformableMesh`](guides/mesh-component/functions.md#change-deformable-mesh). The key binding for this is "F".
 
+#### Version 2.2.1 (11/2025) {#version-221}
+- **Support for Unreal Engine 5.7**
+- **[Realtime Mesh Component](installation/realtimemesh.md) is finally available for Unreal Engine 5.5 - 5.7**
+
 ### Version NEXT (UPCOMING) {#version-23}
 :::info
 This version is not released yet.
 :::
-- **Support for Unreal Engine 5.7**
-- **[Realtime Mesh Component](installation/realtimemesh.md) is finally available for Unreal Engine 5.5 - 5.7**
 - Bugfixes:
-    - Material slot names are now processed correctly and stored in the mesh component so that they can be accessed (eg. using the function *SetMaterialByName*). 
-        - **IMPORTANT** To use this, the deformable mesh asset must be [refreshed](guides/mesh-tool/asset-management.md#refreshing-an-existing-deformable-mesh).
+    - Material slot names are now processed correctly and stored in the mesh component so that they can be accessed (eg. using the function *SetMaterialByName*). See [here](guides/mesh-component/materials.md) for an example.
+        - **IMPORTANT** To use this, the deformable mesh asset must be [refreshed](guides/mesh-tool/asset-management.md#refreshing-an-existing-deformable-mesh) once using this version of the plugin.
 - Miscellaneous:
     - The [custom material functions](guides/mesh-component/materials.md#custom) that we provided (e.g. *AddMaterialInstanceSlot*, *SetMaterialFloatParam*, ...) are now **deprecated** and will be removed in future updates. They are not required anymore, because you can simply use the [generic material functions](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/UMeshComponent) provided by the mesh component itself. See the linked topic for more information.
+    - [Hazard lights](guides/mesh-component/settings.md#hazard-lights) are not included in the component itself anymore. The logic is very specific and that's why we moved it to the example car blueprint.
